@@ -1,0 +1,116 @@
+@import "variables";
+
+body {
+    @include font($ff: 'Ubuntu');
+    margin: 0;
+}
+
+.wrapper-column {
+    max-width: $screen-width;
+    margin: 0 auto;
+    @include flex($fd: column);
+
+    //@include
+    &__input {
+        width: 50%;
+        margin: 10px 25%;
+        padding: 5px 0;
+        border-radius: 5px;
+    }
+}
+
+header {
+    margin-top: 10px !important;
+
+    input[type="text"] {
+        width: calc(100% - 8px);
+        margin: 5px 0;
+        height: 24px;
+    }
+}
+
+.main {
+
+    &__message {
+        background-color: lightgray;
+        border: 1px solid black;
+        border-radius: 10px;
+        margin: 5px 1px;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        word-break: break-all;
+
+        &--number {
+            opacity: 0.5;
+            margin-bottom: 5px;
+        }
+
+    }
+}
+
+.form-publish {
+    input {
+        width: calc(100% - 8px);
+        margin: 5px 0;
+        
+        height: 24px;
+    }
+    button {
+        width: 50%;
+        margin: 10px 25%;
+        padding: 5px 0;
+        border-radius: 5px;
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+.modal-window {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    &__area {
+        background-color: black;
+        opacity: 0.5;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+
+    form {
+        position: fixed;
+        top: 10%;
+        background-color: white;
+        z-index: 3;
+        max-width: 360px;
+        padding: 10px;
+        padding-top: 20px;
+        max-width: 100%;
+
+        left: 10px;
+        width: calc(100% - 40px);
+
+        @include media-xs {
+            width: 360px; 
+            left: 50%;
+        transform: translateX(-50%);
+        }
+    }
+}
+
+.close-img {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
